@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../Auth/Hook/useAuth";
+import logo from "/assets/logo.png";
 
 const Navbar = () => {
   // useContext
@@ -29,16 +30,24 @@ const Navbar = () => {
   const links = (
     <>
       <li className="text-lg font-bold">
-        <NavLink to={"/"} className={'dark:hover:bg-slate-800'}>Home</NavLink>
+        <NavLink to={"/"} className={"dark:hover:bg-slate-800"}>
+          Home
+        </NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/allBooks"} className={'dark:hover:bg-slate-800'}>All Books</NavLink>
+        <NavLink to={"/allBooks"} className={"dark:hover:bg-slate-800"}>
+          All Books
+        </NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/addBook"} className={'dark:hover:bg-slate-800'}>Add Book</NavLink>
+        <NavLink to={"/addBook"} className={"dark:hover:bg-slate-800"}>
+          Add Book
+        </NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/borrowedBooks"} className={'dark:hover:bg-slate-800'}>Borrowed Books</NavLink>
+        <NavLink to={"/borrowedBooks"} className={"dark:hover:bg-slate-800"}>
+          Borrowed Books
+        </NavLink>
       </li>
 
       {users?.email ? (
@@ -47,12 +56,12 @@ const Navbar = () => {
         <>
           <div className="divider divider-start sm:hidden m-0"></div>
           <li className="text-lg font-bold sm:hidden">
-            <NavLink to={"/login"} className={'dark:hover:bg-slate-800'}>
+            <NavLink to={"/login"} className={"dark:hover:bg-slate-800"}>
               <span>Sign In</span>
             </NavLink>
           </li>
           <li className="text-lg font-bold sm:hidden">
-            <NavLink to={"/register"} className={'dark:hover:bg-slate-800'}>
+            <NavLink to={"/register"} className={"dark:hover:bg-slate-800"}>
               <span>Sign Up</span>
             </NavLink>
           </li>
@@ -67,7 +76,9 @@ const Navbar = () => {
         {/* start */}
         <div className="navbar-start">
           <Link to={"/"}>
-            <h2 className="text-4xl font-bold">TrackBook.</h2>
+            <h2 className="text-4xl font-bold flex items-center gap-1">
+              <img src={logo} className="h-8 w-8" /> TrackBook.
+            </h2>
           </Link>
         </div>
 
@@ -77,7 +88,7 @@ const Navbar = () => {
         </div>
 
         {/* end */}
-        <div className="navbar-end gap-2">
+        <div className="navbar-end">
           {/* darkmode */}
           <div className="mr-2 flex items-center">
             <label className="swap swap-rotate">
@@ -112,24 +123,26 @@ const Navbar = () => {
             <div className="relative rounded-full profilePhoto">
               <div className="dropdown dropdown-hover  rounded-full">
                 <div tabIndex={0} role="button" className="rounded-full m-1">
-                  
                   <img
-                  src={`${users?.photoURL}`}
-                  alt="profile photo"
-                  className="h-10 w-10 rounded-[50%] object-cover"
-                />
+                    src={`${users?.photoURL}`}
+                    alt="profile photo"
+                    className="h-10 w-10 rounded-[50%] object-cover"
+                  />
                 </div>
-                
-                <ul tabIndex={0} className="dropdown-content menu bg-base-100 dark:bg-[#0a1020] rounded-box z-30 w-44 px-2 py-5 border dark:border-none text-center text-base font-bold space-y-3 -right-14">
-                <li className="px-3 border-b pb-4">{users?.displayName}</li>
-                <li className="px-3">
-                  <button
-                    onClick={handleSignOut}
-                    className="btn dark:bg-[#010313] dark:hover:bg-[#161f2c] dark:border-slate-800 dark:text-white text-lg font-bold min-w-28"
-                  >
-                    Sign Out
-                  </button>
-                </li>
+
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu bg-base-100 dark:bg-[#0a1020] rounded-box z-30 w-44 px-2 py-5 border dark:border-none text-center text-base font-bold space-y-3 -right-14"
+                >
+                  <li className="px-3 border-b pb-4">{users?.displayName}</li>
+                  <li className="px-3">
+                    <button
+                      onClick={handleSignOut}
+                      className="btn dark:bg-[#010313] dark:hover:bg-[#161f2c] dark:border-slate-800 dark:text-white text-lg font-bold min-w-28"
+                    >
+                      Sign Out
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -150,7 +163,7 @@ const Navbar = () => {
           )}
 
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
+            <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden p-0 sm:pl-2 pr-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-7 w-7"

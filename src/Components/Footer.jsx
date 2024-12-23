@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaDiscord, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
+import logo from "/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,7 +9,9 @@ const Footer = () => {
       <footer className="footer lg:justify-around py-20 text-base px-10 relative ">
         <aside>
           <div className="flex items-center gap-2">
-            <h1 className="text-4xl font-bold">TrackBook.</h1>
+            <h2 className="text-4xl font-bold flex items-center gap-1">
+              <img src={logo} className="h-8 w-8 bg-w" /> TrackBook.
+            </h2>
           </div>
           <p>
             TrackBook Industries Ltd.
@@ -25,7 +28,6 @@ const Footer = () => {
             </li>
             <li>
               <Link to={"https://www.linkedin.com/"}>
-                
                 <span className="hover:text-[#0a66c2]">
                   <FaLinkedin size={30} />
                 </span>
@@ -49,24 +51,29 @@ const Footer = () => {
         </aside>
 
         <nav>
-          <h6 className="text-black dark:text-white font-bold text-xl">Quick Link</h6>
+          <h6 className="text-black dark:text-white font-bold text-xl">
+            Quick Link
+          </h6>
           <a className="link link-hover">Blog</a>
           <a className="link link-hover">Features</a>
           <a className="link link-hover">Top Author</a>
           <a className="link link-hover">Top Categories</a>
         </nav>
         <nav>
-          <h6 className="text-black dark:text-white font-bold text-xl">Help Center</h6>
+          <h6 className="text-black dark:text-white font-bold text-xl">
+            Help Center
+          </h6>
           <a className="link link-hover">Courses</a>
           <a className="link link-hover">Support</a>
           <a className="link link-hover">Get Help</a>
           <a className="link link-hover">Privacy Policy</a>
         </nav>
         <nav>
-          <h6 className="text-black dark:text-white font-bold text-xl">Contact Info</h6>
+          <h6 className="text-black dark:text-white font-bold text-xl">
+            Contact Info
+          </h6>
           <a className="link link-hover"> Call Us: 1-885-665-2548</a>
           <a className="link link-hover">
-            
             Address: +7811 Vermont Ave, <br /> Los Angeles, CA 90054
           </a>
           <a className="link link-hover">Mail Us: hello@TrackBook.com</a>
