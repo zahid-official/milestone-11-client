@@ -8,10 +8,10 @@ const Footer = () => {
       <footer className="footer lg:justify-around py-20 text-base px-10 relative ">
         <aside>
           <div className="flex items-center gap-2">
-            <h1 className="text-4xl font-bold">TrackBook</h1>
+            <h1 className="text-4xl font-bold">Logo</h1>
           </div>
           <p>
-            TrackBook Industries Ltd.
+            Logo Industries Ltd.
             <br />
             Providing reliable tech since 2014
           </p>
@@ -69,12 +69,12 @@ const Footer = () => {
             
             Address: +7811 Vermont Ave, <br /> Los Angeles, CA 90054
           </a>
-          <a className="link link-hover">Mail Us: hello@TrackBook.com</a>
+          <a className="link link-hover">Mail Us: hello@logo.com</a>
         </nav>
       </footer>
 
       <div className="py-7 px-5 text-lg font-semibold text-center border-t-2">
-        <p>© TrackBook is Proudly Owned by Zahidul Islam</p>
+        <p>© Logo is Proudly Owned by Zahidul Islam</p>
       </div>
     </>
   );

@@ -3,9 +3,6 @@ import MainLayout from "../Layout/MainLayout";
 import Error from "../Pages/Error/Error";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
-import AllBooks from "../Pages/AllBooks/AllBooks";
-import AddBook from "../Pages/AddBook/AddBook";
-import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 
 const Routes = createBrowserRouter([
   {
@@ -18,16 +15,20 @@ const Routes = createBrowserRouter([
         element: <h1>Home Page</h1>,
       },
       {
-        path: "/allBooks",
-        element: <AllBooks></AllBooks>
+        path: "/route2",
+        element: <h1>Route2 Page</h1>,
       },
       {
-        path: "/addBook",
-        element: <AddBook></AddBook>
+        path: "/route3",
+        element: <h1>Route3 Page</h1>,
       },
       {
-        path: "/borrowedBooks",
-        element: <BorrowedBooks></BorrowedBooks>
+        path: "/route4",
+        element: <h1>Route4 Page</h1>,
+      },
+      {
+        path: "/route5",
+        element: <h1>Route5 Page</h1>,
       },
       {
         path: "/login",

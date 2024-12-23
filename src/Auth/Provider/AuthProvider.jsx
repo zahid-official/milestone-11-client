@@ -31,8 +31,8 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // TrackBookut
-  const TrackBookut = () => {
+  // logout
+  const logout = () => {
     setLoading(true);
     return signOut(auth);
   };
@@ -66,7 +66,7 @@ const AuthProvider = ({ children }) => {
     setUsers,
     register,
     login,
-    TrackBookut,
+    logout,
     profile,
     google,
     loading,

@@ -5,11 +5,11 @@ import useAuth from "../Auth/Hook/useAuth";
 
 const Navbar = () => {
   // useContext
-  const { users, TrackBookut } = useAuth();
+  const { users, logout } = useAuth();
 
   // handleSignOut
   const handleSignOut = () => {
-    TrackBookut()
+    logout()
       .then(() => {
         toast.success("Sign Out Successfully");
       })
@@ -32,13 +32,16 @@ const Navbar = () => {
         <NavLink to={"/"} className={'dark:hover:bg-slate-800'}>Home</NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/allBooks"} className={'dark:hover:bg-slate-800'}>All Books</NavLink>
+        <NavLink to={"/route2"} className={'dark:hover:bg-slate-800'}>Route2</NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/addBook"} className={'dark:hover:bg-slate-800'}>Add Book</NavLink>
+        <NavLink to={"/route3"} className={'dark:hover:bg-slate-800'}>Route3</NavLink>
       </li>
       <li className="text-lg font-bold">
-        <NavLink to={"/borrowedBooks"} className={'dark:hover:bg-slate-800'}>Borrowed Books</NavLink>
+        <NavLink to={"/route4"} className={'dark:hover:bg-slate-800'}>Route4</NavLink>
+      </li>
+      <li className="text-lg font-bold">
+        <NavLink to={"/route5"} className={'dark:hover:bg-slate-800'}>Route5</NavLink>
       </li>
 
       {users?.email ? (
@@ -67,7 +70,7 @@ const Navbar = () => {
         {/* start */}
         <div className="navbar-start">
           <Link to={"/"}>
-            <h2 className="text-4xl font-bold">TrackBook</h2>
+            <h2 className="text-4xl font-bold">Logo</h2>
           </Link>
         </div>
 
