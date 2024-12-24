@@ -66,11 +66,11 @@ const Categories = () => {
               <h1 className="text-4xl title-font mt-2.5">
                 Featured Collections in <br className="2xl:block hidden" /> Our Library
               </h1>
-              <p className="py-4 text-[#7a7a7a]">
-                {`It's a charming day in this enchanted town, a perfect day for a mystical journey. Would you join us? Could you be part of our tale? So grab your wand and don your cape, let's embark on an adventure! We’re going to visit the magical world of the Addams Family. Meet Michael Knight, a brave soul on a mission to protect the innocent.`}
+              <p className="py-10 text-[#7a7a7a]">
+                {`Its a neighborly day in this beautywood a neighborly day for a beauty. Would you be mine? Could you be mine. So get a witch’s shawl on a broomstick you can crawl on. Were gonna pay a call on the Addams Family? Michael Knight a young loner on a crusade to champion the cause of the innocent.`}
               </p>
               
-              <div className="mt-10 flex gap-7">
+              <div className="flex gap-7">
                 <span className="w-16 mt-3 rounded-full h-[2px] bg-black xl:inline-block hidden"></span>
                 <span className="font-bold border-b-2 pb-2 hover:text-[#f66e5e] duration-300 border-[#f66e5e]">View All Books</span>
               </div>
