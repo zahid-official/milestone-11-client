@@ -23,3 +23,10 @@ a.active{
     color: black !important;
     background-color: #f2f2f2 !important;
 }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

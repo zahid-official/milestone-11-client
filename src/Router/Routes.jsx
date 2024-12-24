@@ -7,6 +7,7 @@ import AllBooks from "../Pages/All Books/AllBooks";
 import AddBook from "../Pages/AddBook/AddBook";
 import BorrowedBooks from "../Pages/BorrowedBooks/BorrowedBooks";
 import Home from "../Pages/Home/Home";
+import PrivateRouter from "./PrivateRouter";
 
 const Routes = createBrowserRouter([
   {
@@ -20,23 +21,36 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/allBooks",
-        element: <AllBooks></AllBooks>,
+        element: (
+          <PrivateRouter>
+            <AllBooks></AllBooks>
+          </PrivateRouter>
+        ),
+        loader: () => fetch("http://localhost:3000/allBooks"),
       },
       {
         path: "/addBook",
-        element: <AddBook></AddBook>
+        element: (
+          <PrivateRouter>
+            <AddBook></AddBook>
+          </PrivateRouter>
+        ),
       },
       {
         path: "/borrowedBooks",
-        element: <BorrowedBooks></BorrowedBooks>
+        element: (
+          <PrivateRouter>
+            <BorrowedBooks></BorrowedBooks>
+          </PrivateRouter>
+        ),
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register></Register>,
       },
     ],
   },

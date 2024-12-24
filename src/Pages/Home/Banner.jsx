@@ -73,7 +73,7 @@ const Banner = () => {
                   Books Made Easy, Knowledge Made Possible.
                 </h1>
                 <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  <span className="z-10">Get Started</span>
+                  Get Started
                 </button>
               </div>
             </div>
@@ -125,10 +125,10 @@ const Banner = () => {
                   </svg>
                 </div>
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
-                Library Designed Fast Learning Unfolded.
+                  Library Designed Fast Learning Unfolded.
                 </h1>
                 <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  <span className="z-10">Get Started</span>
+                  Get Started
                 </button>
               </div>
             </div>
@@ -180,10 +180,10 @@ const Banner = () => {
                   </svg>
                 </div>
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
-                Books Shelved Neat Library Made Elegant.
+                  Books Shelved Neat Library Made Elegant.
                 </h1>
                 <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  <span className="z-10">Get Started</span>
+                  Get Started
                 </button>
               </div>
             </div>
