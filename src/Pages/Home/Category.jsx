@@ -1,28 +1,28 @@
+import { useLoaderData, useParams } from "react-router-dom";
 import PageTitle from "../../Components/PageTitle";
-import { useLoaderData } from "react-router-dom";
-import Book from "./Book";
+import CategoryBook from "./CategoryBook";
 
-const AllBooks = () => {
+const Category = () => {
   // useLoader
   const data = useLoaderData();
-
+  const params = useParams();
   return (
     <>
       <div>
         <PageTitle
-          title={"All Books"}
-          subtitle={"Explore Every Book We Offer"}
+          title={params.id}
+          subtitle={`Explore Our ${params.id} Collection`}
         ></PageTitle>
       </div>
 
       {/* all books */}
       <div className="flex flex-wrap justify-center gap-x-12 sm:gap-y-24 gap-y-12 max-w-[90rem] mx-auto my-40 ">
         {data.map((book) => (
-          <Book key={book._id} book={book}></Book>
+          <CategoryBook key={book._id} categoryBook={book}></CategoryBook>
         ))}
       </div>
     </>
   );
 };
 
-export default AllBooks;
+export default Category;

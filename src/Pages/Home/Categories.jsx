@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import category1 from "/assets/category1.jpg";
 import category2 from "/assets/category2.jpg";
 import category3 from "/assets/category3.jpg";
@@ -13,35 +14,53 @@ const Categories = () => {
           {/* left */}
           <div className="2xl:col-span-7 xl:col-span-8 max-w-[945px] mx-auto">
             <div className="mx-auto flex justify-center gap-8 flex-wrap">
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category1} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Comedy</h3>
-              </div>
+              {/* comedy */}
+              <Link to='/category/Comedy'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category1} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Comedy</h3>
+                </div>
+              </Link>
 
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category2} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Thriller</h3>
-              </div>
+              {/* thriller */}
+              <Link to='/category/Thriller'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category2} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Thriller</h3>
+                </div>
+              </Link>
 
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category3} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Adventure</h3>
-              </div>
+              {/* adventure */}
+              <Link to='/category/Adventure'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category3} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Adventure</h3>
+                </div>
+              </Link>
 
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category4} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Fantasy</h3>
-              </div>
+              {/* fantasy */}
+              <Link to='/category/Fantasy'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category4} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Fantasy</h3>
+                </div>
+              </Link>
 
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category5} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Mystery</h3>
-              </div>
+              {/* mystery */}
+              <Link to='/category/Mystery'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category5} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Mystery</h3>
+                </div>
+              </Link>
 
-              <div className="cursor-pointer hover:text-[#f66e5e] duration-300">
-                <img src={category6} className="h-80" alt="" />
-                <h3 className="text-2xl font-semibold mt-2.5">Magical</h3>
-              </div>
+              {/* magical */}
+              <Link to='/category/Magical'>
+                <div className="hover:text-[#f66e5e] duration-300">
+                  <img src={category6} className="h-80" alt="" />
+                  <h3 className="text-2xl font-semibold mt-2.5">Magical</h3>
+                </div>
+              </Link>
             </div>
           </div>
 

@@ -2,9 +2,8 @@
 
 import { Link } from "react-router-dom";
 
-const Book = ({ book }) => {
-  const { _id: id, bookName, bookImage, author, category, quantity } = book;
-
+const CategoryBook = ({ categoryBook }) => {
+  const { _id: id, bookName, bookImage, author, category, quantity } = categoryBook;
   return (
     <>
       <div className="justify-self-centerrounded-xl flex flex-col justify-between items-start max-w-[26rem] rounded-2xl md:px-5">
@@ -33,9 +32,9 @@ const Book = ({ book }) => {
         </div>
 
         {/* button */}
-        <Link to={`/updateBook/${id}`} className="w-full mt-5">
+        <Link to={`/bookDetails/${id}`} className="w-full mt-5">
           <button className="btn bg-transparent duration-300 rounded-3xl hover:bg-[#f66e5e] hover:text-white w-full">
-            Update Details
+            See Details
           </button>
         </Link>
       </div>
@@ -43,4 +42,4 @@ const Book = ({ book }) => {
   );
 };
 
-export default Book;
+export default CategoryBook;

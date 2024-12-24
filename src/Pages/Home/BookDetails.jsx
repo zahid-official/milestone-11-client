@@ -3,7 +3,7 @@
 const BookDetails = () => {
     return (
         <div>
-            
+            details
         </div>
     );
 };
