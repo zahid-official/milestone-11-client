@@ -1,9 +1,19 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const CategoryBook = ({ categoryBook }) => {
-  const { _id: id, bookName, bookImage, author, category, quantity } = categoryBook;
+  const {
+    _id: id,
+    bookName,
+    bookImage,
+    author,
+    category,
+    quantity,
+    rating,
+  } = categoryBook;
   return (
     <>
       <div className="justify-self-centerrounded-xl flex flex-col justify-between items-start max-w-[26rem] rounded-2xl md:px-5">
@@ -16,9 +26,14 @@ const CategoryBook = ({ categoryBook }) => {
         <div className=" w-full">
           <h2 className="text-xl title-font font-semibold mt-4">{bookName}</h2>
           <div className="space-y-1.5">
-            <p>
-              <span className="italic text-sm">by </span> {author}
-            </p>
+            <div className="flex justify-between items-center">
+              <p>
+                <span className="italic text-sm">by </span> {author}
+              </p>
+              <p>
+                <Rating style={{ maxWidth: 80 }} value={rating} readOnly />
+              </p>
+            </div>
 
             <div className="flex justify-between text-sm">
               <p className="text-sm">
