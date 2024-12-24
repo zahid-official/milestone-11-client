@@ -23,7 +23,7 @@ const Banner = () => {
           clickable: true,
         }}
         modules={[Pagination, Autoplay, EffectFade]}
-        className="mySwiper min-h-[86vh] dark:bg-[#0e1629] bg-[#f1f5eb]"
+        className="mySwiper min-h-[86vh] dark:bg-[#0e1629] bg-[#f4f4eb]"
       >
         {/* slider-01 */}
         <SwiperSlide>
@@ -180,7 +180,7 @@ const Banner = () => {
                   </svg>
                 </div>
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
-                Books Shelved Neat Library Made Elegant & Calm.
+                Books Shelved Neat Library Made Elegant.
                 </h1>
                 <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
                   <span className="z-10">Get Started</span>
