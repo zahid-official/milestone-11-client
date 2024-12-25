@@ -35,10 +35,6 @@ const BookDetails = () => {
       bookImage,
       author,
       category,
-      quantity,
-      rating,
-      bookContent,
-      description,
       borrowDate,
       borrowerName,
       borrowerEmail,
@@ -92,7 +88,7 @@ const BookDetails = () => {
 
               <button
                 className="btn btn-neutral hover:bg-[#131b25] text-white font-bold px-12 h-14  text-lg"
-                disabled={quantity < 1 }
+                disabled={quantity < 1}
                 onClick={() =>
                   document.getElementById("my_modal_5").showModal()
                 }

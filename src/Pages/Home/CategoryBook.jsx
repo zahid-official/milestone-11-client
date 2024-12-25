@@ -18,20 +18,21 @@ const CategoryBook = ({ categoryBook }) => {
     <>
       <div className="justify-self-centerrounded-xl flex flex-col justify-between items-start max-w-[26rem] rounded-2xl md:px-5">
         {/* img */}
-        <div className="">
+        <div className="w-full">
           <img src={bookImage} alt="book" className="h-80" />
+
         </div>
 
         {/* content */}
-        <div className=" w-full">
+        <div className=" w-full mt-2">
           <h2 className="text-xl title-font font-semibold mt-4">{bookName}</h2>
           <div className="space-y-1.5">
-            <div className="flex justify-between items-center">
+            <div className="flex gap-2 justify-between items-center">
               <p>
                 <span className="italic text-sm">by </span> {author}
               </p>
               <p>
-                <Rating style={{ maxWidth: 80 }} value={rating} readOnly />
+                <Rating style={{ maxWidth: 72 }} value={rating} readOnly />
               </p>
             </div>
 
