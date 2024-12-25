@@ -16,8 +16,8 @@ const AddBook = () => {
     const bookImage = event.target.bookImage.value;
     const category = event.target.category.value;
     const author = event.target.author.value;
-    const quantity = event.target.quantity.value;
-    const rating = event.target.rating.value;
+    const quantity = parseInt(event.target.quantity.value);
+    const rating = parseInt(event.target.rating.value);
     const bookContent = event.target.bookContent.value;
     const description = event.target.textarea.value;
     const userEmail = users?.email;

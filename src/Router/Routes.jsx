@@ -35,8 +35,8 @@ const Routes = createBrowserRouter([
             <BookDetails></BookDetails>
           </PrivateRouter>
         ),
-        // loader: ({ params }) =>
-        //   fetch(`http://localhost:3000/updateBook/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/bookDetails/${params.id}`),
       },
 
       {
