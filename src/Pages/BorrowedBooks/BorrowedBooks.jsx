@@ -27,6 +27,7 @@ const BorrowedBooks = () => {
                 <th>Book</th>
                 <th>Borrower</th>
                 <th>Borrowed Date</th>
+                <th>Return Date</th>
                 <th></th>
               </tr>
             </thead>

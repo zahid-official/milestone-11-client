@@ -9,7 +9,8 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
     category,
     bookName,
     bookImage,
-    borrowDate,
+    returnDate,
+    borrowedDate,
     borrowerName,
     borrowerEmail,
   } = borrowed;
@@ -51,7 +52,8 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
           <span className="badge badge-ghost badge-sm">{borrowerEmail}</span>
         </td>
 
-        <td>{borrowDate}</td>
+        <td className="pl-7">{borrowedDate}</td>
+        <td className="pl-7">{returnDate}</td>
 
         <th>
           <button onClick={handleReturn} className="btn rounded-xl bg-[#f66e5e] hover:bg-[#da5a4b] text-white duration-200 px-5">

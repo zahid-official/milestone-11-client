@@ -6,8 +6,10 @@ import { useState } from "react";
 
 const BookDetails = () => {
   // useLoader
-  const data = useLoaderData();
-  const [num, setNum] = useState(data);
+  const loadedData = useLoaderData();
+  // state
+  const [data, setData] = useState(loadedData);
+  const [warning, setWarning] = useState('');
   // contextAPI
   const { users } = useAuth();
   const borrowerName = users?.displayName;
@@ -23,27 +25,45 @@ const BookDetails = () => {
     rating,
     bookContent,
     description,
-  } = num || {};
+  } = data || {};
+
+  // date formating
+  const currentDate = new Date();
+  currentDate.setHours(currentDate.getHours() + 6);
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const borrowedDate = `${year}-${month}-${day}`;
 
   // handleSubmit
   const handleSubmit = (event) => {
     event.preventDefault();
-    const borrowDate = event.target.appliedDate.value;
+    const returnDate = event.target.appliedDate.value;
+
+    // validation
+    if(returnDate < borrowedDate){
+      return setWarning('Invalid Return Date');
+    }
+
     const borrowedData = {
       isbn,
       bookName,
       bookImage,
       author,
       category,
-      borrowDate,
+      returnDate,
+      borrowedDate,
       borrowerName,
       borrowerEmail,
     };
 
     // create applicationsData in mongoDB
     axios.post("http://localhost:3000/borrow", borrowedData).then((res) => {
+      if (!res.data) {
+        return toast.error("This Book already Borrowed");
+      }
       toast.success("Book Borrowed Successfully");
-      setNum(res.data);
+      setData(res.data);
     });
 
     document.getElementById("my_modal_5").close();
@@ -148,6 +168,10 @@ const BookDetails = () => {
                   className="input input-bordered"
                   required
                 />
+
+                <label className="label">
+                  <span className="label-text text-red-500 font-semibold">{warning}</span>
+                </label>
               </div>
             </div>
 
