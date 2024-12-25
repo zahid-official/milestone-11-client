@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
   const {
@@ -19,7 +20,10 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
     // handleReturn
     const handleReturn = () => {
         axios.delete(`http://localhost:3000/returnBook?isbn=${isbn}&borrowerEmail=${borrowerEmail}`)
-        .then((res) => setBorrowedBooks(res.data))
+        .then((res) => {
+          setBorrowedBooks(res.data)
+          toast.success('Book Returned Successfully');
+        })
     }
 
 
