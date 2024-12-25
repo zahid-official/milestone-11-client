@@ -17,7 +17,7 @@ const BorrowedBooks = () => {
       .then((res) => setBorrowedBooks(res.data));
   }, [email]);
   return (
-    <div className="pt-16 pb-36">
+    <div className="pt-16 pb-36 px-6">
       <div className="max-w-7xl mx-auto gap-5">
         <div className="overflow-x-auto">
           <table className="table border">

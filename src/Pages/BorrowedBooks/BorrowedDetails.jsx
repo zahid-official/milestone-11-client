@@ -31,10 +31,11 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
     <tbody>
       {/* body */}
       <tr>
-        <td>
-          <div className="flex items-center gap-5">
+
+        <td className="min-w-36">
+          <div className=" lg:flex items-center gap-5">
             <div className="">
-              <div className="">
+              <div className="mb-1.5">
                 <img src={bookImage} className="h-24" />
               </div>
             </div>
