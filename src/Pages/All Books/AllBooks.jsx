@@ -5,10 +5,13 @@ import { FaListUl } from "react-icons/fa";
 import Book from "./Book";
 import { useState } from "react";
 import ListBook from "./ListBook";
+import axios from "axios";
 
 const AllBooks = () => {
   // useLoader
-  const data = useLoaderData();
+  const loadedData = useLoaderData();
+  // filter Data
+  const [data, setData] = useState(loadedData);
   // state for toggleView
   const [toggleView, setToggleView] = useState(true);
 
@@ -19,7 +22,8 @@ const AllBooks = () => {
 
   // handleFilter
   const handleFilter = () => {
-    console.log('ck')
+    axios.get('http://localhost:3000/filter')
+    .then(res => setData(res.data))
   }
 
   return (
@@ -75,7 +79,7 @@ const AllBooks = () => {
       </div>
 
       {/* list view */}
-      <div className="pb-40 px-6">
+      <div className={`pb-40 px-6 ${toggleView ? 'hidden' : 'block'}`}>
         <div className="max-w-7xl mx-auto gap-5">
           <div className="overflow-x-auto">
             <table className="table border">
