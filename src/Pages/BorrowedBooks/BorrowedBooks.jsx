@@ -1,21 +1,26 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../Auth/Hook/useAuth";
-import axios from "axios";
 import BorrowedDetails from "./BorrowedDetails";
+import useAxios from "../../Auth/Hook/useAxios";
 
 const BorrowedBooks = () => {
   // contextAPI
   const { users } = useAuth();
   const email = users?.email;
 
+  // useAxios Hook
+  const axiosInstance = useAxios();
+
   // state for data
   const [borrowedBooks, setBorrowedBooks] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/borrowedBooks/${email}`)
+    axiosInstance
+      .get(`/borrowedBooks/${email}`)
       .then((res) => setBorrowedBooks(res.data));
-  }, [email]);
+  }, [email, axiosInstance]);
+
+
   return (
     <div className="pt-16 pb-36 px-6">
       <div className="max-w-7xl mx-auto gap-5">

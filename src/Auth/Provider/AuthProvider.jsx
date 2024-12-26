@@ -12,6 +12,7 @@ import {
   updateProfile,
   signOut,
 } from "firebase/auth";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   // state for users
@@ -52,7 +53,28 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const observer = onAuthStateChanged(auth, (usersData) => {
       setUsers(usersData);
-      setLoading(false);
+
+      // jwt token
+      const email = usersData?.email;
+      if (email) {
+        axios
+          .post(
+            "http://localhost:3000/jwt",
+            { email },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+            setLoading(false);
+          });
+      } else {
+        axios
+          .post("http://localhost:3000/logout", {}, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            setLoading(false);
+          });
+      }
     });
 
     return () => {

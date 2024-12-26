@@ -15,7 +15,7 @@ const Categories = () => {
           <div className="2xl:col-span-7 xl:col-span-8 max-w-[945px] mx-auto">
             <div className="mx-auto flex justify-center gap-8 flex-wrap">
               {/* comedy */}
-              <Link to='/category/Comedy'>
+              <Link to="/category/Comedy">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category1} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Comedy</h3>
@@ -23,7 +23,7 @@ const Categories = () => {
               </Link>
 
               {/* thriller */}
-              <Link to='/category/Thriller'>
+              <Link to="/category/Thriller">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category2} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Thriller</h3>
@@ -31,7 +31,7 @@ const Categories = () => {
               </Link>
 
               {/* adventure */}
-              <Link to='/category/Adventure'>
+              <Link to="/category/Adventure">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category3} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Adventure</h3>
@@ -39,7 +39,7 @@ const Categories = () => {
               </Link>
 
               {/* fantasy */}
-              <Link to='/category/Fantasy'>
+              <Link to="/category/Fantasy">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category4} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Fantasy</h3>
@@ -47,7 +47,7 @@ const Categories = () => {
               </Link>
 
               {/* mystery */}
-              <Link to='/category/Mystery'>
+              <Link to="/category/Mystery">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category5} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Mystery</h3>
@@ -55,7 +55,7 @@ const Categories = () => {
               </Link>
 
               {/* magical */}
-              <Link to='/category/Magical'>
+              <Link to="/category/Magical">
                 <div className="hover:text-[#f66e5e] duration-300">
                   <img src={category6} className="h-80" alt="" />
                   <h3 className="text-2xl font-semibold mt-2.5">Magical</h3>
@@ -78,9 +78,11 @@ const Categories = () => {
 
               <div className="flex gap-7">
                 <span className="w-16 mt-3 rounded-full h-[2px] bg-black xl:inline-block hidden"></span>
-                <span className="font-bold border-b-2 pb-2 hover:text-[#f66e5e] duration-300 border-[#f66e5e]">
-                  View All Books
-                </span>
+                <Link to='/allBooks'>
+                  <span className="font-bold border-b-2 pb-2 hover:text-[#f66e5e] duration-300 border-[#f66e5e]">
+                    View All Books
+                  </span>
+                </Link>
               </div>
             </div>
           </div>

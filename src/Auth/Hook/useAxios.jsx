@@ -1,14 +1,42 @@
 import axios from "axios";
-
+import { useEffect } from "react";
+import useAuth from "./useAuth";
+import { useNavigate } from "react-router-dom";
 
 // axios instance
-const instance = axios.create({
-    baseURL: "http://localhost:3000",
-    withCredentials: true,
-})
+const axiosInstance = axios.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: true,
+});
 
 const useAxios = () => {
-    return instance;
+    // useAuth
+    const {logout} = useAuth();
+    // useNavigate
+    const navigate = useNavigate();
+
+  // axios interceptor
+  useEffect(() => {
+    axiosInstance.interceptors.response.use(
+      (response) => {
+        return response;
+      },
+      (error) => {
+        
+        // custom restrictions
+        if(error.status === 401 || error.status === 403){
+            logout()
+            .then(() => {
+                navigate('/login')
+            })
+            .catch(error => console.log(error))
+        }
+        return Promise.reject(error);
+      }
+    );
+  }, [logout, navigate]);
+
+  return axiosInstance;
 };
 
 export default useAxios;
