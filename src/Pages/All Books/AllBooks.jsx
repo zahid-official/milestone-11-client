@@ -44,7 +44,7 @@ const AllBooks = () => {
             className={`${
               toggleView &&
               "text-red-400 dark:text-red-400 border-red-400 dark:border-red-400"
-            } text-white btn bg-transparent h-14`}
+            } btn bg-transparent h-14`}
           >
             <IoGrid size={25}></IoGrid>
           </button>
@@ -55,7 +55,7 @@ const AllBooks = () => {
             className={`${
               toggleView ||
               "text-red-400 dark:text-red-400 border-red-400 dark:border-red-400"
-            } text-white btn bg-transparent h-14`}
+            } btn bg-transparent h-14`}
           >
             <FaListUl size={25}></FaListUl>
           </button>

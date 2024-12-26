@@ -34,7 +34,7 @@ const Book = ({ book }) => {
 
         {/* button */}
         <Link to={`/updateBook/${id}`} className="w-full mt-5">
-          <button className="btn bg-transparent duration-300 rounded-lg hover:bg-[#f66e5e] hover:text-white w-full">
+          <button className="btn bg-transparent dark:text-white duration-300 rounded-lg hover:bg-[#f66e5e] hover:text-white w-full">
             Update Details
           </button>
         </Link>
