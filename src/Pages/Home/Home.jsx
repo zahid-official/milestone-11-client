@@ -1,6 +1,7 @@
 import Quotes from "../../Components/Quotes";
 import Banner from "./Banner";
 import Categories from "./Categories";
+import Stories from "./Stories";
 import categoryBg from "/assets/category-bg.png";
 import quotesImg from "/assets/quotes.png";
 import quotesImg2 from "/assets/quotes2.png";
@@ -38,7 +39,7 @@ const Home = () => {
       <section>
         <div className="mx-auto bg-[url(/assets/quotesBg.jpg)] bg-fixed text-white space-y-5 mb-36">
           {/* quotes */}
-          <div className="bg-[#18273a7e] py-28 h-full">
+          <div className="bg-[#18273a7e] py-28 h-full px-3">
           <Quotes
             quotesImg={quotesImg2}
             quotes={`You can’t cross the sea merely by standing and staring at the water`}
@@ -47,6 +48,8 @@ const Home = () => {
           ></Quotes>
           </div>
         </div>
+
+        <Stories></Stories>
       </section>
     </div>
   );
