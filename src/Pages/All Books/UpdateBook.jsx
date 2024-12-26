@@ -46,7 +46,7 @@ const UpdateBook = () => {
     };
     console.log(updateBookData)
 
-    axios.put(`http://localhost:3000/updateBook/${id}`, updateBookData).then((res) => {
+    axios.put(`https://trackbook-server.vercel.app/updateBook/${id}`, updateBookData).then((res) => {
       console.log(res);
       toast.success("Book Updated Successfully");
     });

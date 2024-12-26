@@ -58,7 +58,7 @@ const BookDetails = () => {
     };
 
     // create applicationsData in mongoDB
-    axios.post("http://localhost:3000/borrow", borrowedData).then((res) => {
+    axios.post("https://trackbook-server.vercel.app/borrow", borrowedData).then((res) => {
       if (!res.data) {
         return toast.error("This Book already Borrowed");
       }

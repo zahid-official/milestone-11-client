@@ -22,7 +22,7 @@ const AllBooks = () => {
 
   // handleFilter
   const handleFilter = () => {
-    axios.get('http://localhost:3000/filter')
+    axios.get('https://trackbook-server.vercel.app/filter')
     .then(res => setData(res.data))
   }
 

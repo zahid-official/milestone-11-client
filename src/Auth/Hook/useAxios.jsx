@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 // axios instance
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://trackbook-server.vercel.app",
   withCredentials: true,
 });
 

@@ -19,7 +19,7 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
 
     // handleReturn
     const handleReturn = () => {
-        axios.delete(`http://localhost:3000/returnBook?isbn=${isbn}&borrowerEmail=${borrowerEmail}`)
+        axios.delete(`https://trackbook-server.vercel.app/returnBook?isbn=${isbn}&borrowerEmail=${borrowerEmail}`)
         .then((res) => {
           setBorrowedBooks(res.data)
           toast.success('Book Returned Successfully');

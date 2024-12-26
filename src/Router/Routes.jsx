@@ -30,7 +30,7 @@ const Routes = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/category/${params.id}`),
+          fetch(`https://trackbook-server.vercel.app/category/${params.id}`),
       },
       {
         path: "/bookDetails/:id",
@@ -40,7 +40,7 @@ const Routes = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/bookDetails/${params.id}`),
+          fetch(`https://trackbook-server.vercel.app/bookDetails/${params.id}`),
       },
 
       {
@@ -50,7 +50,7 @@ const Routes = createBrowserRouter([
             <AllBooks></AllBooks>
           </PrivateRouter>
         ),
-        loader: () => fetch("http://localhost:3000/allBooks"),
+        loader: () => fetch("https://trackbook-server.vercel.app/allBooks"),
       },
       {
         path: "/updateBook/:id",
@@ -60,7 +60,7 @@ const Routes = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/updateBook/${params.id}`),
+          fetch(`https://trackbook-server.vercel.app/updateBook/${params.id}`),
       },
       {
         path: "/addBook",

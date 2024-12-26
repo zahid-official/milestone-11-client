@@ -59,7 +59,7 @@ const AuthProvider = ({ children }) => {
       if (email) {
         axios
           .post(
-            "http://localhost:3000/jwt",
+            "https://trackbook-server.vercel.app/jwt",
             { email },
             { withCredentials: true }
           )
@@ -69,7 +69,7 @@ const AuthProvider = ({ children }) => {
           });
       } else {
         axios
-          .post("http://localhost:3000/logout", {}, { withCredentials: true })
+          .post("https://trackbook-server.vercel.app/logout", {}, { withCredentials: true })
           .then((res) => {
             console.log(res.data);
             setLoading(false);
