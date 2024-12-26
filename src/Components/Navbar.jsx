@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../Auth/Hook/useAuth";
-import logo from "/assets/logo.png";
+import { GiBookCover } from "react-icons/gi";
 
 const Navbar = () => {
   // useContext
@@ -77,7 +77,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <Link to={"/"}>
             <h2 className="text-4xl font-bold flex items-center gap-1">
-              <img src={logo} className="h-8 w-8" /> TrackBook.
+              <GiBookCover></GiBookCover> TrackBook.
             </h2>
           </Link>
         </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
                   <li className="px-3">
                     <button
                       onClick={handleSignOut}
-                      className="btn dark:bg-[#010313] dark:hover:bg-[#161f2c] dark:border-slate-800 dark:text-white text-lg font-bold min-w-28"
+                      className="btn bg-[#010313] dark:bg-base-200 dark:text-black dark:hover:bg-base-300 hover:bg-[#161f2c] text-white text-lg font-bold min-w-28"
                     >
                       Sign Out
                     </button>

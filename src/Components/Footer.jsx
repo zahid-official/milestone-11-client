@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaDiscord, FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import logo from "/assets/logo.png";
+import { GiBookCover } from "react-icons/gi";
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
         <aside>
           <div className="flex items-center gap-2">
             <h2 className="text-4xl font-bold flex items-center gap-1">
-              <img src={logo} className="h-8 w-8 bg-w" /> TrackBook.
+              <GiBookCover></GiBookCover> TrackBook.
             </h2>
           </div>
           <p>

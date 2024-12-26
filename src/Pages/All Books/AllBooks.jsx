@@ -44,7 +44,7 @@ const AllBooks = () => {
             className={`${
               toggleView &&
               "text-red-400 dark:text-red-400 border-red-400 dark:border-red-400"
-            } dark:text-white btn bg-transparent h-14`}
+            } text-white btn bg-transparent h-14`}
           >
             <IoGrid size={25}></IoGrid>
           </button>
@@ -55,14 +55,14 @@ const AllBooks = () => {
             className={`${
               toggleView ||
               "text-red-400 dark:text-red-400 border-red-400 dark:border-red-400"
-            } dark:text-white btn bg-transparent h-14`}
+            } text-white btn bg-transparent h-14`}
           >
             <FaListUl size={25}></FaListUl>
           </button>
         </div>
 
         {/* filter */}
-        <button onClick={handleFilter} className="btn text-base bg-red-400 text-white">Filter Available Books</button>
+        <button onClick={handleFilter} className="btn text-base bg-red-400 border-none text-white">Filter Available Books</button>
       </div>
 
       {/* display all books */}
@@ -85,7 +85,7 @@ const AllBooks = () => {
             <table className="table border">
               {/* head */}
               <thead>
-                <tr className="text-base">
+                <tr className="text-base dark:text-white">
                   <th>Book Cover</th>
                   <th>Book Name</th>
                   <th>Author</th>

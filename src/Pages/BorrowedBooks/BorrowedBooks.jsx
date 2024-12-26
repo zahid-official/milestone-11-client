@@ -28,7 +28,7 @@ const BorrowedBooks = () => {
           <table className="table border">
             {/* head */}
             <thead>
-              <tr className="text-base">
+              <tr className="text-base dark:text-white">
                 <th>Book</th>
                 <th>Borrower</th>
                 <th>Borrowed Date</th>

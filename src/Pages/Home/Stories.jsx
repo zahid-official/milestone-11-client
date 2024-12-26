@@ -9,7 +9,7 @@ const Stories = () => {
       {/* story1 */}
       <div className="flex flex-wrap mb-16 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col items-center justify-center">
         {/* image */}
-        <div>
+        <div className="bg-white">
           <img src={story1} className="sm:h-[600px]" alt="" />
         </div>
 
@@ -43,7 +43,7 @@ const Stories = () => {
         </div>
 
         {/* image */}
-        <div>
+        <div className="bg-white">
           <img src={story2} className="sm:h-[600px]" alt="" />
         </div>
       </div>
@@ -51,7 +51,7 @@ const Stories = () => {
       {/* story3 */}
       <div className="flex flex-wrap mb-24 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col items-center justify-center">
         {/* image */}
-        <div>
+        <div className="bg-white">
           <img src={story3} className="sm:h-[600px]" alt="" />
         </div>
         {/* text */}
@@ -69,7 +69,7 @@ const Stories = () => {
       </div>
 
       {/* review */}
-      <div className="bg-[url(/assets/reviewBg.jpg)] bg-bottom">
+      <div className="bg-[url(/assets/reviewBg.jpg)] bg-bottom text-black">
         <div
           className="mt-10 bg-t mb-36 py-28 flex lg:justify-end justify-center px-6"
           style={{

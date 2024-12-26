@@ -35,7 +35,7 @@ const ListBook = ({ book }) => {
           <th>
             {/* button */}
             <Link to={`/updateBook/${id}`} className="mt-5">
-              <button className="btn rounded-xl bg-[#f66e5e] hover:bg-[#da5a4b] text-white duration-200 px-5">
+              <button className="btn rounded-xl bg-[#f66e5e] border-none hover:bg-[#da5a4b] text-white duration-200 px-5">
                 Update Details
               </button>
             </Link>

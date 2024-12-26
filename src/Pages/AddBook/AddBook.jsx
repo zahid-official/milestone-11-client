@@ -56,7 +56,7 @@ const AddBook = () => {
       </div>
 
       {/* book info */}
-      <section className="py-36">
+      <section className="py-36 dark:text-black">
         <div className="px-5 sm:w-11/12 mx-auto mt-8">
           <form onSubmit={handleSubmit} className="flex flex-col gap-10">
             {/* top */}
