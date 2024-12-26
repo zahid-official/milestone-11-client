@@ -37,7 +37,7 @@ const Home = () => {
 
       {/* stories */}
       <section>
-        <div className="mx-auto bg-[url(/assets/quotesBg.jpg)] bg-fixed text-white space-y-5 mb-36">
+        <div className="mx-auto bg-[url(/assets/quotesBg.jpg)] bg-fixed bg-cover text-white space-y-5 mb-36">
           {/* quotes */}
           <div className="bg-[#18273a7e] py-28 h-full px-3">
           <Quotes

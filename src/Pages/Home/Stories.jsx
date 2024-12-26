@@ -20,7 +20,7 @@ const Stories = () => {
             <span className="text-6xl bg-[#f66e5e] text-white px-9 py-4 mr-1 inline-block mt-4">
               J
             </span>
-            son​
+            son
           </h2>
 
           <p className="mt-10 text-[#7a7a7a]">{`It's a neighborly day in this beautywood, a neighborly day for a beauty. The air is crisp, the sun shining with a gentle warmth that seems to invite all to enjoy the peace. At the period of our arrival at the island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. The crew moved about with quiet efficiency, their labors almost done, each man eager for the journey ahead. There was a sense of anticipation in the air, a feeling that something momentous was soon to unfold as the ship readied itself for its fateful voyage. The island, with its rugged beauty and remote solitude, seemed to hold its breath, waiting.`}</p>
@@ -70,11 +70,18 @@ const Stories = () => {
 
       {/* review */}
       <div className="bg-[url(/assets/reviewBg.jpg)] bg-bottom">
-        <div className="mt-10 bg-t mb-36 py-28 flex lg:justify-end justify-center px-6" style={{'background-image': 'linear-gradient(180deg, #fff 0%, rgba(227, 238, 239, 0) 71%)'}}>
-
-          <div className="bg-[#fafafa] inline-block sm:p-20 p-10 rounded-2xl lg:mr-44">
+        <div
+          className="mt-10 bg-t mb-36 py-28 flex lg:justify-end justify-center px-6"
+          style={{
+            "background-image":
+              "linear-gradient(180deg, #fff 0%, rgba(227, 238, 239, 0) 71%)",
+          }}
+        >
+          <div className="bg-[#fafafa] inline-block sm:p-20 p10 rounded-2xl lg:mr-44">
             <p className="sm:text-2xl text-xl title-font mb-5">
-              Joyful and beautiful adventure. It will take you to <br className="md:block hidden" />landscapes never seen before!
+              Joyful and beautiful adventure. It will take you to{" "}
+              <br className="md:block hidden" />
+              landscapes never seen before!
             </p>
 
             <div className="flex items-center gap-2">
