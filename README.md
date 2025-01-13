@@ -1,4 +1,4 @@
-# TrackBook - Library Management System
+# TrackBook - Book Management System
 
 ## 🚀 Project Overview
 
