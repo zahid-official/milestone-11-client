@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Lottie from "lottie-react";
 import registerLottie from "../../Lottie/register.json";
 import useAuth from "../../Auth/Hook/useAuth";
+import Navbar from "../../Components/Navbar";
 
 const Register = () => {
   // useContent
@@ -69,6 +70,10 @@ const Register = () => {
 
   return (
     <>
+      {/* navbar */}
+      <Navbar></Navbar>
+
+      {/* form */}
       <div className="flex xl:flex-row flex-col xl:gap-44 gap-16 w-11/12 mx-auto">
         {/* lottie animation */}
         <div className="flex-1 flex xl:items-end items-center flex-col">
@@ -77,7 +82,7 @@ const Register = () => {
             className="max-w-xl w-full mt-28"
           ></Lottie>
         </div>
-        
+
         {/* registration form */}
         <div className="flex-1">
           <div className="card bg-[#f9f9f9] dark:bg-[#0a1020] w-full max-w-xl xl:mx-0 mx-auto py-14 mt-10 mb-28 sm:px-12 px-6">
@@ -157,7 +162,7 @@ const Register = () => {
 
                 {/* submit */}
                 <div className="form-control">
-                  <button className="btn mt-2 text-lg font-semibold dark:bg-slate-900 dark:hover:bg-slate-950 dark:text-white border-none">
+                  <button className="btn mt-2 text-lg font-semibold btn-neutral hover:bg-[#131b25] dark:bg-slate-900 dark:hover:bg-slate-950 dark:text-white border-none">
                     <span className="z-10">Sign Up</span>
                   </button>
 

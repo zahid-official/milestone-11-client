@@ -28,7 +28,7 @@ const BorrowedDetails = ({ borrowed, setBorrowedBooks }) => {
 
 
   return (
-    <tbody>
+    <tbody className="hover:bg-base-200 dark:hover:bg-slate-900 duration-500">
       {/* body */}
       <tr>
 

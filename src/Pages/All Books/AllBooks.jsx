@@ -3,9 +3,10 @@ import { useLoaderData } from "react-router-dom";
 import { IoGrid } from "react-icons/io5";
 import { FaListUl } from "react-icons/fa";
 import Book from "./Book";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ListBook from "./ListBook";
 import axios from "axios";
+import Navbar from "../../Components/Navbar";
 
 const AllBooks = () => {
   // useLoader
@@ -22,18 +23,43 @@ const AllBooks = () => {
 
   // handleFilter
   const handleFilter = () => {
-    axios.get('https://trackbook-server.vercel.app/filter')
-    .then(res => setData(res.data))
-  }
+    axios
+      .get("https://trackbook-server.vercel.app/filter")
+      .then((res) => setData(res.data));
+  };
+
+  // state for scroll
+  const [isScroll, setIsScroll] = useState(false);
+
+  // useEffect for navbar scroll
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    });
+  }, []);
 
   return (
     <>
-      <div>
-        <PageTitle
-          title={"All Books"}
-          subtitle={"Explore Every Book We Offer mt-"}
-        ></PageTitle>
-      </div>
+      <section className="bg-[url(/assets/quotesBg.jpg)] bg-center bg-cover">
+        <div
+          className={`fixed top-0 z-50 w-full ${
+            isScroll ?
+            "bg-white dark:bg-[#010313] backdrop-blur-sm dark:backdrop-blur-sm bg-opacity-70 dark:bg-opacity-70 text-black dark:text-white" : "text-white"
+          }`}
+        >
+          <Navbar></Navbar>
+        </div>
+        <div className="bg-[#18273a33] text-white pt-24">
+          <PageTitle
+            title={"All Books"}
+            subtitle={"Explore Every Book We Offer"}
+          ></PageTitle>
+        </div>
+      </section>
 
       <div className=" mt-28 flex gap-3 items-center justify-between px-6 mb-12 max-w-[90rem] mx-auto">
         {/* toggle view */}
@@ -62,7 +88,12 @@ const AllBooks = () => {
         </div>
 
         {/* filter */}
-        <button onClick={handleFilter} className="btn text-base bg-red-400 border-none text-white">Filter Available Books</button>
+        <button
+          onClick={handleFilter}
+          className="btn text-base bg-red-400 border-none text-white"
+        >
+          Filter Available Books
+        </button>
       </div>
 
       {/* display all books */}
@@ -79,7 +110,7 @@ const AllBooks = () => {
       </div>
 
       {/* list view */}
-      <div className={`pb-40 px-6 ${toggleView ? 'hidden' : 'block'}`}>
+      <div className={`pb-40 px-6 ${toggleView ? "hidden" : "block"}`}>
         <div className="max-w-7xl mx-auto gap-5">
           <div className="overflow-x-auto">
             <table className="table border">

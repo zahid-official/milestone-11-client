@@ -5,8 +5,10 @@ import banner3 from "/assets/banner3.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
-
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+
+import { motion } from "motion/react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -16,14 +18,14 @@ const Banner = () => {
         spaceBetween={40}
         // effect={"fade"}
         autoplay={{
-          delay: 3500,
+          delay: 6000,
           disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,
         }}
         modules={[Pagination, Autoplay, EffectFade]}
-        className="mySwiper min-h-[86vh] dark:bg-[#0e1629] bg-[#f4f4eb]"
+        className="mySwiper min-h-[86vh] dark:bg-[#0e1629] bg-[#f4f4eb] bg-[url(/assets/bg.svg)] bg-cover bg-bottom"
       >
         {/* slider-01 */}
         <SwiperSlide>
@@ -31,13 +33,23 @@ const Banner = () => {
             <div className="hero-content gap-10 flex-col lg:flex-row-reverse">
               {/* part-01 */}
               <div className="flex-1 flex justify-center items-center rounded-3xl ">
-                <div className="overflow-hidden">
-                  <img src={banner1} className="sm:max-w-sm" />
+                <div className="overflow-hidden min-h-[67vh]">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      bounce: 0.3,
+                      duration: 1.8,
+                    }}
+                    src={banner1}
+                    className="sm:max-w-sm"
+                  />
                 </div>
               </div>
 
               {/* part-02 */}
-              <div className="flex-1">
+              <div className="flex-1 lg:-mt-7">
                 <div className="flex items-center gap-2 mb-4">
                   <h5 className="font-bold sm:text-lg">Book Club</h5>
                   <svg
@@ -72,9 +84,11 @@ const Banner = () => {
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
                   Books Made Easy, Knowledge Made Possible.
                 </h1>
-                <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  Get Started
-                </button>
+                <Link to={"/allBooks"}>
+                  <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
+                    Get Books
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -86,13 +100,23 @@ const Banner = () => {
             <div className="hero-content gap-10 flex-col lg:flex-row">
               {/* part-01 */}
               <div className="flex-1 flex justify-center items-center rounded-3xl ">
-                <div className="overflow-hidden">
-                  <img src={banner2} className="sm:max-w-sm" />
+                <div className="overflow-hidden min-h-[67vh]">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      bounce: 0.3,
+                      duration: 1.8,
+                    }}
+                    src={banner2}
+                    className="sm:max-w-sm"
+                  />
                 </div>
               </div>
 
               {/* part-02 */}
-              <div className="flex-1">
+              <div className="flex-1 lg:-mt-7">
                 <div className="flex items-center gap-2 mb-4">
                   <h5 className="font-bold sm:text-lg">Book Club</h5>
                   <svg
@@ -127,9 +151,11 @@ const Banner = () => {
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
                   Library Designed Fast Learning Unfolded.
                 </h1>
-                <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  Get Started
-                </button>
+                <Link to={"/allBooks"}>
+                  <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
+                    Read Books
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -141,13 +167,23 @@ const Banner = () => {
             <div className="hero-content gap-10 flex-col lg:flex-row-reverse">
               {/* part-01 */}
               <div className="flex-1 flex justify-center items-center rounded-3xl ">
-                <div className="overflow-hidden scale-95">
-                  <img src={banner3} className="sm:max-w-sm " />
+                <div className="overflow-hidden scale-95  min-h-[67vh]">
+                  <motion.img
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{
+                      type: "spring",
+                      bounce: 0.3,
+                      duration: 1.8,
+                    }}
+                    src={banner3}
+                    className="sm:max-w-sm "
+                  />
                 </div>
               </div>
 
               {/* part-02 */}
-              <div className="flex-1">
+              <div className="flex-1 lg:-mt-7">
                 <div className="flex items-center gap-2 mb-4">
                   <h5 className="font-bold sm:text-lg">Book Club</h5>
                   <svg
@@ -182,9 +218,11 @@ const Banner = () => {
                 <h1 className="sm:text-7xl text-4xl font-bold sm:leading-[72px] tracking-tight">
                   Books Shelved Neat Library Made Elegant.
                 </h1>
-                <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
-                  Get Started
-                </button>
+                <Link to={"/allBooks"}>
+                  <button className="btn btn-neutral hover:bg-[#131b25] text-white mt-7 text-lg font-semibold">
+                    Join Book Club
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

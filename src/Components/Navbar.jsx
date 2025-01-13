@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAuth from "../Auth/Hook/useAuth";
 import { GiBookCover } from "react-icons/gi";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   // useContext
@@ -29,26 +30,26 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li className="text-lg font-bold">
+      <motion.li whileTap={{ scale: 0.8 }} transition={{duration: .1}} className="text-lg font-bold">
         <NavLink to={"/"} className={"dark:hover:bg-slate-800"}>
           Home
         </NavLink>
-      </li>
-      <li className="text-lg font-bold">
+      </motion.li>
+      <motion.li whileTap={{ scale: 0.8 }} transition={{duration: .1}} className="text-lg font-bold">
         <NavLink to={"/allBooks"} className={"dark:hover:bg-slate-800"}>
           All Books
         </NavLink>
-      </li>
-      <li className="text-lg font-bold">
+      </motion.li>
+      <motion.li whileTap={{ scale: 0.8 }} transition={{duration: .1}} className="text-lg font-bold">
         <NavLink to={"/addBook"} className={"dark:hover:bg-slate-800"}>
           Add Book
         </NavLink>
-      </li>
-      <li className="text-lg font-bold">
+      </motion.li>
+      <motion.li whileTap={{ scale: 0.8 }} transition={{duration: .1}} className="text-lg font-bold">
         <NavLink to={"/borrowedBooks"} className={"dark:hover:bg-slate-800"}>
           Borrowed Books
         </NavLink>
-      </li>
+      </motion.li>
 
       {users?.email ? (
         ""
@@ -88,7 +89,7 @@ const Navbar = () => {
         </div>
 
         {/* end */}
-        <div className="navbar-end">
+        <div className="navbar-end sm:gap-1.5">
           {/* darkmode */}
           <div className="mr-2 flex items-center">
             <label className="swap swap-rotate">
@@ -134,7 +135,7 @@ const Navbar = () => {
                   tabIndex={0}
                   className="dropdown-content menu bg-base-100 dark:bg-[#0a1020] rounded-box z-30 w-44 px-2 py-5 border dark:border-none text-center text-base font-bold space-y-3 -right-14"
                 >
-                  <li className="px-3 border-b pb-4">{users?.displayName}</li>
+                  <li className="px-3 text-[#222222] dark:text-white border-b pb-4">{users?.displayName}</li>
                   <li className="px-3">
                     <button
                       onClick={handleSignOut}
@@ -149,13 +150,13 @@ const Navbar = () => {
           ) : (
             <div className="sm:flex gap-2.5 hidden">
               <Link to={"/login"}>
-                <button className="btn dark:bg-[#0a1020] dark:hover:bg-slate-800 dark:border-slate-700 dark:text-white text-lg font-bold min-w-28">
+                <button className="btn btn-neutral hover:bg-[#131b25] dark:bg-[#0a1020] dark:hover:bg-slate-800 dark:border-slate-700 dark:text-white text-lg font-bold min-w-28">
                   Sign In
                 </button>
               </Link>
 
               <Link to={"/register"}>
-                <button className="btn dark:bg-[#0a1020] dark:hover:bg-slate-800 dark:border-slate-700 dark:text-white text-lg font-bold min-w-28">
+                <button className="btn btn-neutral hover:bg-[#131b25] dark:bg-[#0a1020] dark:hover:bg-slate-800 dark:border-slate-700 dark:text-white text-lg font-bold min-w-28">
                   Sign Up
                 </button>
               </Link>
@@ -182,7 +183,7 @@ const Navbar = () => {
 
             <ul
               tabIndex={0}
-              className="z-20 dark:bg-[#0a1020] right-2 py-4 menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow gap-2"
+              className="z-20 text-[#222222] dark:text-white dark:bg-[#0a1020] right-2 py-4 menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow gap-2"
             >
               {links}
             </ul>

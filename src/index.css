@@ -30,3 +30,48 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+
+
+
+.category + .categoryName{
+    transform: translateX(-30px);
+    transition: .3s;
+}
+.category:hover + .categoryName{
+    transform: translateX(0px);
+}
+.category + .categoryName span{
+    opacity: 0;
+    transition: .3s;
+}
+.category:hover + .categoryName span{
+    opacity: 1;
+}
+
+
+
+
+
+.categoryName:hover{
+    transform: translateX(0px);
+}
+.categoryName:hover span{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.book:hover ~ .bookBtn button{
+    background-color: #f66e5e;
+    color: white;
+    border-radius: 10px;
+}
+
+.dark .book:hover ~ .bookBtn button{
+    border: none;
+}

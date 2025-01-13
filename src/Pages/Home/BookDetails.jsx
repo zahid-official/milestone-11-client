@@ -3,13 +3,14 @@ import useAuth from "../../Auth/Hook/useAuth";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useState } from "react";
+import Navbar from "../../Components/Navbar";
 
 const BookDetails = () => {
   // useLoader
   const loadedData = useLoaderData();
   // state
   const [data, setData] = useState(loadedData);
-  const [warning, setWarning] = useState('');
+  const [warning, setWarning] = useState("");
   // contextAPI
   const { users } = useAuth();
   const borrowerName = users?.displayName;
@@ -41,8 +42,8 @@ const BookDetails = () => {
     const returnDate = event.target.appliedDate.value;
 
     // validation
-    if(returnDate < borrowedDate){
-      return setWarning('Invalid Return Date');
+    if (returnDate < borrowedDate) {
+      return setWarning("Invalid Return Date");
     }
 
     const borrowedData = {
@@ -58,13 +59,15 @@ const BookDetails = () => {
     };
 
     // create applicationsData in mongoDB
-    axios.post("https://trackbook-server.vercel.app/borrow", borrowedData).then((res) => {
-      if (!res.data) {
-        return toast.error("This Book already Borrowed");
-      }
-      toast.success("Book Borrowed Successfully");
-      setData(res.data);
-    });
+    axios
+      .post("https://trackbook-server.vercel.app/borrow", borrowedData)
+      .then((res) => {
+        if (!res.data) {
+          return toast.error("This Book already Borrowed");
+        }
+        toast.success("Book Borrowed Successfully");
+        setData(res.data);
+      });
 
     document.getElementById("my_modal_5").close();
   };
@@ -72,50 +75,52 @@ const BookDetails = () => {
   return (
     <>
       {/* details */}
-      <div className="">
-        <div className="hero bg-[#f9f9f9] dark:bg-[#0e1629] xl:w-10/12 w-11/12 mt-8 mb-36 mx-auto sm:py-28 py-12 px-10 rounded-3xl">
-          <div className="hero-content gap-10 flex-col lg:flex-row w-full">
-            <div className="flex-1 flex justify-center">
-              <img src={bookImage} className="sm:max-w-sm" />
+      <div className="relative">
+        <Navbar></Navbar>
+        <div className="absolute top-25 left-0">
+          <img src="/assets/leaf.png" alt="" />
+        </div>
+      </div>
+      <div className="hero bg-[#f4f4ec] dark:bg-[#0e1629] mx-auto sm:pt-28 sm:pb-36 py-12 px-10">
+        <div className="hero-content gap-10 flex-col lg:flex-row w-full">
+          <div className="flex-1 flex justify-center">
+            <img src={bookImage} className="sm:max-w-sm" />
+          </div>
+
+          <div className="flex-1 px-4 space-y-1.5">
+            {/* heading */}
+            <div className="space-y-2">
+              <h1 className="sm:text-5xl text-4xl font-bold">{bookName}</h1>
+              <p className="font-semibold sm:text-xl">Author: {author}</p>
+              <p className="font-semibold sm:text-lg">Category: {category}</p>
             </div>
+            <br />
 
-            <div className="flex-1 px-4 space-y-1.5">
-              {/* heading */}
-              <div className="space-y-2">
-                <h1 className="sm:text-5xl text-4xl font-bold">{bookName}</h1>
-                <p className="font-semibold sm:text-xl">Author: {author}</p>
-                <p className="font-semibold sm:text-lg">Category: {category}</p>
-              </div>
-              <br />
+            <p>
+              <span className="font-semibold">Rating: </span>
+              {rating}
+            </p>
+            <p>
+              <span className="font-semibold">Quantity: </span>
+              {quantity}
+            </p>
 
-              <p>
-                <span className="font-semibold">Rating: </span>
-                {rating}
-              </p>
-              <p>
-                <span className="font-semibold">Quantity: </span>
-                {quantity}
-              </p>
+            <p>
+              <span className="font-semibold">Book Content: </span>
+              {bookContent}
+            </p>
+            <p className="pb-8">
+              <span className="font-semibold">Book Description: </span>
+              {description}
+            </p>
 
-              <p>
-                <span className="font-semibold">Book Content: </span>
-                {bookContent}
-              </p>
-              <p className="pb-8">
-                <span className="font-semibold">Book Description: </span>
-                {description}
-              </p>
-
-              <button
-                className="btn btn-neutral hover:bg-[#131b25] text-white font-bold px-12 h-14  text-lg"
-                disabled={quantity < 1}
-                onClick={() =>
-                  document.getElementById("my_modal_5").showModal()
-                }
-              >
-                Borrow Book
-              </button>
-            </div>
+            <button
+              className="btn btn-neutral hover:bg-[#131b25] text-white font-bold px-12 h-14  text-lg"
+              disabled={quantity < 1}
+              onClick={() => document.getElementById("my_modal_5").showModal()}
+            >
+              Borrow Book
+            </button>
           </div>
         </div>
       </div>
@@ -170,7 +175,9 @@ const BookDetails = () => {
                 />
 
                 <label className="label">
-                  <span className="label-text text-red-500 font-semibold">{warning}</span>
+                  <span className="label-text text-red-500 font-semibold">
+                    {warning}
+                  </span>
                 </label>
               </div>
             </div>

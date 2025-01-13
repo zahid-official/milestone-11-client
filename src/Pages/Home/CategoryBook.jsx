@@ -3,6 +3,7 @@
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { motion } from "motion/react";
 
 const CategoryBook = ({ categoryBook }) => {
   const {
@@ -18,9 +19,17 @@ const CategoryBook = ({ categoryBook }) => {
     <>
       <div className="justify-self-centerrounded-xl flex flex-col justify-between items-start max-w-[26rem] rounded-2xl md:px-5">
         {/* img */}
-        <div className="w-full">
-          <img src={bookImage} alt="book" className="h-80" />
-
+        <div className="book">
+          <Link to={`/bookDetails/${id}`}>
+            <motion.img
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              transition={{ visualDuration: 0.2 }}
+              src={bookImage}
+              alt="book"
+              className="h-80"
+            />
+          </Link>
         </div>
 
         {/* content */}
@@ -48,8 +57,8 @@ const CategoryBook = ({ categoryBook }) => {
         </div>
 
         {/* button */}
-        <Link to={`/bookDetails/${id}`} className="w-full mt-5">
-          <button className="btn bg-transparent duration-300 rounded-3xl hover:bg-[#f66e5e] hover:text-white w-full">
+        <Link to={`/bookDetails/${id}`} className="w-full mt-5 bookBtn">
+          <button className="btn dark:hover:border-none bg-transparent dark:text-white duration-300 hover:bg-[#f66e5e] hover:text-white w-full">
             See Details
           </button>
         </Link>

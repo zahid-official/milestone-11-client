@@ -5,6 +5,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import loginLottie from "../../Lottie/login.json";
 import Lottie from "lottie-react";
 import useAuth from "../../Auth/Hook/useAuth";
+import Navbar from "../../Components/Navbar";
 
 const Login = () => {
   // useContext
@@ -45,6 +46,10 @@ const Login = () => {
   };
   return (
     <>
+      {/* navbar */}
+      <Navbar></Navbar>
+
+      {/* form */}
       <div className="flex lg:flex-row flex-col-reverse gap-10 w-11/12 mx-auto">
         {/* login form */}
         <div className="flex-1 flex lg:justify-end justify-center">
@@ -91,7 +96,7 @@ const Login = () => {
 
                 {/* submit */}
                 <div className="form-control pt-2">
-                  <button className="btn dark:bg-slate-900 dark:hover:bg-slate-950 dark:text-white border-none mt-2 text-lg font-semibold">
+                  <button className="btn btn-neutral hover:bg-[#131b25] dark:bg-slate-900 dark:hover:bg-slate-950 dark:text-white border-none mt-2 text-lg font-semibold">
                     <span className="z-10">Sign In</span>
                   </button>
 

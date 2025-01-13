@@ -3,14 +3,26 @@ import story2 from "/assets/story2.png";
 import story3 from "/assets/story3.png";
 import review from "/assets/review.jpg";
 
+import { motion } from "motion/react";
+
 const Stories = () => {
   return (
     <>
       {/* story1 */}
       <div className="flex flex-wrap mb-16 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col items-center justify-center">
         {/* image */}
-        <div className="bg-white">
-          <img src={story1} className="sm:h-[600px]" alt="" />
+        <div className="bg-white ">
+          <motion.img
+            initial={{ opacity: 0, x: -300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1.2,
+              delay: 0.6,
+            }}
+            src={story1}
+            className="sm:h-[600px]"
+            alt=""
+          />
         </div>
 
         {/* text */}
@@ -28,7 +40,12 @@ const Stories = () => {
       </div>
 
       {/* story2 */}
-      <div className="flex flex-wrap mb-24 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col-reverse items-center justify-center">
+      <div className="flex relative flex-wrap mb-24 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col-reverse items-center justify-center">
+        {/* leaf */}
+        <div className="absolute left-0 top-6 -z-10">
+          <img src="/assets/left.png" alt="" />
+        </div>
+
         {/* text */}
         <div className="max-w-3xl xl:text-right">
           <h4 className="font-bold xl:mr-[100px]">Misterious Girl</h4>
@@ -44,15 +61,40 @@ const Stories = () => {
 
         {/* image */}
         <div className="bg-white">
-          <img src={story2} className="sm:h-[600px]" alt="" />
+          <motion.img
+            initial={{ opacity: 0, x: 300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1.2,
+              delay: 0.5,
+            }}
+            src={story2}
+            className="sm:h-[600px]"
+            alt=""
+          />
         </div>
       </div>
 
       {/* story3 */}
-      <div className="flex flex-wrap mb-24 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col items-center justify-center">
+      <div className="flex relative flex-wrap mb-24 px-6 2xl:gap-20 gap-10 xl:flex-row flex-col items-center justify-center">
+        {/* leaf */}
+        <div className="absolute right-0 top-8 -z-10">
+          <img src="/assets/right.png" className="w-96" alt="" />
+        </div>
+
         {/* image */}
         <div className="bg-white">
-          <img src={story3} className="sm:h-[600px]" alt="" />
+          <motion.img
+            initial={{ opacity: 0, x: -300 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{
+              duration: 1.2,
+              delay: 0.1,
+            }}
+            src={story3}
+            className="sm:h-[600px]"
+            alt=""
+          />
         </div>
         {/* text */}
         <div className="max-w-3xl">
@@ -77,22 +119,29 @@ const Stories = () => {
               "linear-gradient(180deg, #fff 0%, rgba(227, 238, 239, 0) 71%)",
           }}
         >
-          <div className="bg-[#fafafa] inline-block sm:p-20 p10 rounded-2xl lg:mr-44">
-            <p className="sm:text-2xl text-xl title-font mb-5">
-              Joyful and beautiful adventure. It will take you to{" "}
-              <br className="md:block hidden" />
-              landscapes never seen before!
-            </p>
+          <div className="min-h-[37vh]">
+            <div
+              data-aos="zoom-in"
+              className="bg-[#fafafa] inline-block sm:p-20 p-10 rounded-2xl lg:mr-44"
+            >
+              <p className="sm:text-2xl text-xl title-font mb-5">
+                Joyful and beautiful adventure. It will take you to{" "}
+                <br className="md:block hidden" />
+                landscapes never seen before!
+              </p>
 
-            <div className="flex items-center gap-2">
-              <img
-                src={review}
-                className="h-16 w-16 object-cover rounded-full"
-                alt=""
-              />
-              <div>
-                <p>Tiffany James</p>
-                <h4 className="text-sm font-semibold text-[#828686]">Writer</h4>
+              <div className="flex items-center gap-2">
+                <img
+                  src={review}
+                  className="h-16 w-16 object-cover rounded-full"
+                  alt=""
+                />
+                <div>
+                  <p>Tiffany James</p>
+                  <h4 className="text-sm font-semibold text-[#828686]">
+                    Writer
+                  </h4>
+                </div>
               </div>
             </div>
           </div>
