@@ -116,7 +116,7 @@ const Categories = () => {
                 Featured Categories in <br className="2xl:block hidden" /> Our
                 Library
               </h1>
-              <p className="py-10 text-[#7a7a7a]">
+              <p className="py-10 text-[#7a7a7a] ">
                 {`Its a neighborly day in this beautywood a neighborly day for a beauty. Would you be mine? Could you be mine. So get a witch’s shawl on a broomstick you can crawl on. Were gonna pay a call on the Addams Family? Michael Knight a young loner on a crusade to champion the cause of the innocent.`}
               </p>
 

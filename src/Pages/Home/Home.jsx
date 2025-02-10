@@ -53,7 +53,7 @@ const Home = () => {
             quotesImg={quotesImg}
             quotes={`Every day is a journey and the journey itself is home.`}
             writer={"Matsu Bashio"}
-            color={"text-[#818181]"}
+            color={"text-[#818181] dark:text-white"}
           ></Quotes>
         </div>
       </section>
