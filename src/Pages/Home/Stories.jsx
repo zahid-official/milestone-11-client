@@ -35,7 +35,7 @@ const Stories = () => {
             son
           </h2>
 
-          <p className="mt-10 text-[#7a7a7a]">{`It's a neighborly day in this beautywood, a neighborly day for a beauty. The air is crisp, the sun shining with a gentle warmth that seems to invite all to enjoy the peace. At the period of our arrival at the island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. The crew moved about with quiet efficiency, their labors almost done, each man eager for the journey ahead. There was a sense of anticipation in the air, a feeling that something momentous was soon to unfold as the ship readied itself for its fateful voyage. The island, with its rugged beauty and remote solitude, seemed to hold its breath, waiting.`}</p>
+          <p className="mt-10 text-[#7a7a7a] dark:text-white">{`It's a neighborly day in this beautywood, a neighborly day for a beauty. The air is crisp, the sun shining with a gentle warmth that seems to invite all to enjoy the peace. At the period of our arrival at the island, the heaviest storage of the Pequod had been almost completed; comprising her beef, bread, water, fuel, and iron hoops and staves. The crew moved about with quiet efficiency, their labors almost done, each man eager for the journey ahead. There was a sense of anticipation in the air, a feeling that something momentous was soon to unfold as the ship readied itself for its fateful voyage. The island, with its rugged beauty and remote solitude, seemed to hold its breath, waiting.`}</p>
         </div>
       </div>
 
