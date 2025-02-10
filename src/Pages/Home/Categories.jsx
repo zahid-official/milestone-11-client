@@ -125,7 +125,7 @@ const Categories = () => {
 
                   <motion.span whileTap={{ scale: 0.7 }} className="font-bold border-b-2 pb-2 hover:text-[#f66e5e] duration-300 border-[#f66e5e]">
                 <Link to="/allBooks">
-                    View All Books
+                    View All Books 
                 </Link>
                   </motion.span>
               </div>
