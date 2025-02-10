@@ -18,7 +18,7 @@ const Banner = () => {
         spaceBetween={40}
         // effect={"fade"}
         autoplay={{
-          delay: 6000,
+          delay: 7000,
           disableOnInteraction: false,
         }}
         pagination={{
