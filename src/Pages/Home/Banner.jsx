@@ -40,7 +40,7 @@ const Banner = () => {
                     transition={{
                       type: "spring",
                       bounce: 0.3,
-                      duration: 1.8,
+                      duration: 1.9,
                     }}
                     src={banner1}
                     className="sm:max-w-sm"
@@ -107,7 +107,7 @@ const Banner = () => {
                     transition={{
                       type: "spring",
                       bounce: 0.3,
-                      duration: 1.8,
+                      duration: 1.9,
                     }}
                     src={banner2}
                     className="sm:max-w-sm"
@@ -174,7 +174,7 @@ const Banner = () => {
                     transition={{
                       type: "spring",
                       bounce: 0.3,
-                      duration: 1.8,
+                      duration: 1.9,
                     }}
                     src={banner3}
                     className="sm:max-w-sm "
